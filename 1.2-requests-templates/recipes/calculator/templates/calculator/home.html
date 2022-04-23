@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты:</title>
+</head>
+<body>
+{% for dish in dishes%}
+    <p>
+        <a href="{{ dish }}">{{ dish }}<a/>
+    <p/>
+{% endfor %}
+</body>
+</html>
