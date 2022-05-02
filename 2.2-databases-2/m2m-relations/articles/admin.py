@@ -9,11 +9,8 @@ class ArticleTagsInlineFormset(BaseInlineFormSet):
     def clean(self):
         counter = 0
         for form in self.forms:
-            data = form.cleaned_data
-            if data.get('is_main') is True:
+            if form.cleaned_data['is_main']:
                 counter += 1
-            else:
-                continue
         if counter == 0:
             raise ValidationError('Укажите основной раздел')
         elif counter > 1:
