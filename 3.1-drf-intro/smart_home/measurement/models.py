@@ -16,6 +16,7 @@ class Measurement(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='measurements')
     temperature = models.FloatField(verbose_name='Температура')
     created_at = models.DateTimeField(auto_now=True, verbose_name='Дата измерения')
+    image = models.ImageField(null=True, blank=True)
 
     class Meta:
         ordering = ['-created_at']
