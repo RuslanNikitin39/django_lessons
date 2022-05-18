@@ -29,6 +29,7 @@ class StockViewSet(ModelViewSet):
     # ordering_fields = ['address']
     pagination_class = PageNumberPagination
 
+
     def get_queryset(self):
         param = self.request.GET.get('products', None)
 
